@@ -1,6 +1,9 @@
 # Reactly
 A class based flux library for react.
 
+## Setup
+`npm install reactly`
+
 ## Usage
 Reactly provides base classes to implement actions, stores, modules, and components. Reactly modules are react components that provide stores and actions to all child components. Reactly components are react components that can subscribe to stores and call actions defined by parent reactly modules.
 
