@@ -5,6 +5,6 @@
 
 'use strict';
 
-var Reactly = require('./lib/reactly.jsx');
+var Reactly = require('./lib/reactly');
 
 module.exports = Reactly;
