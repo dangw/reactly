@@ -1,5 +1,30 @@
 @import (reference) "../../app.less";
 
 #sub-module-route {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 8px;
+}
+
+#sub-module-route-content {
+  max-width: 600px;
+}
+
+.sub-module-route-text {
+  margin: 4px;
+}
+
+.sub-module-route-button {
+  display: inline-block;
+  background-color: @fore-color;
+  color: @back-color;
+  cursor: pointer;
+  padding: 4px 8px;
+  margin: 4px;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
