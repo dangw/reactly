@@ -1,8 +1,12 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Merriweather:400);
 
 @headerHeight: 50px;
 @fore-color: darkslategrey;
 @back-color: white;
+
+@base-font: 400 12pt "Merriweather", serif;
+@title-font: 300 16pt "Source Sans Pro", sans-serif;
+
 @nav-fore-color: white;
 @nav-back-color: steelblue;
 
@@ -13,8 +17,7 @@
 }
 
 #app {
-  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 12pt;
+  font: @base-font;
   background-color: @back-color;
   color: @fore-color;
 }
@@ -25,8 +28,7 @@
   left: 0;
   right: 0;
   height: @headerHeight;
-  font-size: 14pt;
-  font-weight: 300;
+  font: @title-font;
 }
 
 #app-content {
