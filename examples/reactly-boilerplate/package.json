@@ -1,0 +1,46 @@
+{
+  "name": "reactly-boilerplate",
+  "version": "0.0.3",
+  "description": "A boilerplate app using reactly",
+  "main": "app/index.jsx",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dangw/reactly"
+  },
+  "files": [
+    "webpack.config.js",
+    "app/",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "scripts": {
+    "webpack-debug": "./node_modules/.bin/webpack --devtool inline-source-map --verbose --bail",
+    "webpack-release": "./node_modules/.bin/webpack -p --verbose --bail"
+  },
+  "dependencies": {
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "reactly": "file:..\\.."
+  },
+  "devDependencies": {
+    "css-loader": "^0.15.1",
+    "file-loader": "^0.8.4",
+    "jsx-loader": "^0.13.2",
+    "less": "^2.5.1",
+    "less-loader": "^2.2.0",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.9.12"
+  },
+  "author": "Dan Gwozdz <dev.dangw@gmail.com>",
+  "licenses": [
+    {
+      "type": "ISC",
+      "url": "https://github.com/dangw/reactly/examples/reactly-boilerplate/LICENSE.md"
+    }
+  ],
+  "keywords": [
+    "reactly-boilerplate",
+    "reactly",
+    "dangw"
+  ]
+}

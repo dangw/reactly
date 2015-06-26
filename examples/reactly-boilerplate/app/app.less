@@ -1,0 +1,39 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
+
+@headerHeight: 50px;
+@fore-color: darkslategrey;
+@back-color: white;
+@nav-fore-color: white;
+@nav-back-color: steelblue;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12pt;
+  background-color: @back-color;
+  color: @fore-color;
+}
+
+#app-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: @headerHeight;
+  font-size: 14pt;
+  font-weight: 300;
+}
+
+#app-content {
+  position: fixed;
+  top: @headerHeight;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
