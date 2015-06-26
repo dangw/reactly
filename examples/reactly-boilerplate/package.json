@@ -20,7 +20,7 @@
   "dependencies": {
     "react": "^0.13.3",
     "react-router": "^0.13.3",
-    "reactly": "file:..\\.."
+    "reactly": "0.0.3"
   },
   "devDependencies": {
     "css-loader": "^0.15.1",
