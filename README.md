@@ -5,10 +5,10 @@ A class based flux library for react.
 `npm install reactly`
 
 ## Notes
-Reactly requires es6 transpiling as it is founded on es6 classes. The jsx harmony transpiler is sufficient and fast, though the babel transpiler works as well. See reactly-boilerplate below for an example of using webpack with jsx harmony transpiling.
+Reactly requires es6 transpiling as it is founded on es6 classes. The jsx harmony transpiler is sufficient and fast, though the babel transpiler works as well. See reactly-boilerplate below for an example of using webpack with babel transpiling.
 
 ## Examples
-https://github.com/dangw/reactly/tree/master/examples/reactly-boilerplate
+[reactly-boilerplate](https://github.com/dangw/reactly/tree/master/examples/reactly-boilerplate)
 
 ## Usage
 Reactly provides base classes to implement actions, stores, modules, and components. Reactly modules are react components that provide stores and actions to all child components. Reactly components are react components that can subscribe to stores and call actions defined by parent reactly modules.
