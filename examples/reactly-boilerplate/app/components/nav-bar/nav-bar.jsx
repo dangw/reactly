@@ -3,12 +3,10 @@
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
 
-'use strict';
+import './nav-bar.less';
 
-require('./nav-bar.less');
-
-var React = require('react/addons');
-var Router = require('react-router');
+import React from 'react/addons';
+import Router from 'react-router';
 
 class NavBar extends React.Component {
 
@@ -34,6 +32,7 @@ class NavBar extends React.Component {
             </div>
         );
     }
+
 }
 
-module.exports = NavBar;
+export default NavBar;

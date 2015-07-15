@@ -3,13 +3,9 @@
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
 
-'use strict';
-
-var Reactly = require('reactly');
-
-var Constants = require('../constants/index');
-
-var AppStores = require('../../../stores/index');
+import Reactly from 'reactly';
+import Constants from '../constants/index';
+import AppStores from '../../../stores/index';
 
 class SubModuleStore extends Reactly.Store {
 
@@ -34,4 +30,4 @@ SubModuleStore.actionListeners = {
     onRandomize: [Constants.Actions.RANDOMIZE]
 };
 
-module.exports = SubModuleStore;
+export default SubModuleStore;

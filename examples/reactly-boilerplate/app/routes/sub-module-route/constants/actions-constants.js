@@ -3,11 +3,9 @@
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
 
-'use strict';
-
 class ActionsConstants {
 }
 
 ActionsConstants.RANDOMIZE = ActionsConstants.name + 'RANDOMIZE';
 
-module.exports = ActionsConstants;
+export default ActionsConstants;

@@ -3,11 +3,11 @@
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
 
-'use strict';
+import SubModuleStore from './sub-module-store';
 
 class Stores {
 }
 
-Stores.SubModule = require('./sub-module-store');
+Stores.SubModule = SubModuleStore;
 
-module.exports = Stores;
+export default Stores;

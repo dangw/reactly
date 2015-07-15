@@ -3,6 +3,6 @@
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
 
-'use strict';
+import NavBar from './nav-bar';
 
-module.exports = require('./nav-bar');
+export default NavBar;

@@ -3,11 +3,9 @@
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
 
-'use strict';
+import Reactly from 'reactly';
 
-var Reactly = require('reactly');
-
-var Constants = require('../constants');
+import Constants from '../constants';
 
 class SubModuleActions extends Reactly.Actions {
 
@@ -17,4 +15,4 @@ class SubModuleActions extends Reactly.Actions {
 
 }
 
-module.exports = SubModuleActions;
+export default SubModuleActions;

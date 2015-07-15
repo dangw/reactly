@@ -9,6 +9,7 @@ module.exports = {
         ],
         vendor: [
             'react',
+            'react/addons',
             'react-router',
             'reactly'
         ]
@@ -27,7 +28,16 @@ module.exports = {
             },
             {
                 test: /(\.jsx$|\.js$)/,
-                loader: 'jsx?insertPragma=React.DOM&harmony'
+                loader: 'jsx'
+            },
+            {
+                test: /(\.jsx$|\.js$)/,
+                exclude: /node_modules/,
+                loader: 'babel'
+            },
+            {
+                test: /node_modules\\reactly\\.*\.js$/,
+                loader: 'babel'
             },
             {
                 test: /\.css$/,

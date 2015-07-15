@@ -3,11 +3,11 @@
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
 
-'use strict';
+import ActionsConstants from './actions-constants';
 
 class Constants {
 }
 
-Constants.Actions = require('./actions-constants');
+Constants.Actions = ActionsConstants;
 
-module.exports = Constants;
+export default Constants;

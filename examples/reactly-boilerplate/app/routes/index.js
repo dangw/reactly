@@ -3,11 +3,12 @@
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
 
-'use strict';
+import AppRoute from './app-route';
+import SubModuleRoute from './sub-module-route';
 
 class Routes {}
 
-Routes.App = require('./app-route');
-Routes.SubModule = require('./sub-module-route');
+Routes.App = AppRoute;
+Routes.SubModule = SubModuleRoute;
 
-module.exports = Routes;
+export default Routes;

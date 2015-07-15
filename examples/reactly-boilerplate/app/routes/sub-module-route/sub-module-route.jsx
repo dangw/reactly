@@ -3,18 +3,14 @@
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
 
-'use strict';
+import './sub-module-route.less';
 
-require('./sub-module-route.less');
-
-var React = require('react');
-var Reactly = require('reactly');
-
-var Stores = require('./stores');
-var Actions = require('./actions');
-
-var AppStores = require('../../stores');
-var AppActions = require('../../actions');
+import React from 'react';
+import Reactly from 'reactly';
+import Stores from './stores';
+import Actions from './actions';
+import AppStores from '../../stores';
+import AppActions from '../../actions';
 
 class SubModuleRoute extends Reactly.Module {
 
@@ -72,4 +68,4 @@ SubModuleRoute.storeListeners = {
     onStoreChange: [AppStores.App, Stores.SubModule]
 };
 
-module.exports = SubModuleRoute;
+export default SubModuleRoute;

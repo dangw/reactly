@@ -1,8 +1,10 @@
-'use strict';
+/**
+ * Copyright 2015, Dan Gwozdz <dev.dangw@gmail.com>
+ * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
+ */
 
-var Reactly = require('reactly');
-
-var Constants = require('../constants');
+import Reactly from 'reactly';
+import Constants from '../constants';
 
 class AppStore extends Reactly.Store {
 
@@ -27,4 +29,4 @@ AppStore.actionListeners = {
     onIncrementCount: [Constants.Actions.INCREMENT_COUNT]
 };
 
-module.exports = AppStore;
+export default AppStore;

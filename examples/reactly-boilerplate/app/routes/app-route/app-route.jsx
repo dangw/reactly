@@ -3,15 +3,12 @@
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
 
-'use strict';
+import './app-route.less';
 
-require('./app-route.less');
-
-var React = require('react');
-var Reactly = require('reactly');
-
-var Stores = require('../../stores/index');
-var Actions = require('../../actions/index');
+import React from 'react';
+import Reactly from 'reactly';
+import Stores from '../../stores/index';
+import Actions from '../../actions/index';
 
 class HomeRoute extends Reactly.Component {
 
@@ -49,4 +46,4 @@ HomeRoute.storeListeners = {
     onAppStoreChange: [Stores.App]
 };
 
-module.exports = HomeRoute;
+export default HomeRoute;

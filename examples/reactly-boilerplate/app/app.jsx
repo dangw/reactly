@@ -3,18 +3,14 @@
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
 
-'use strict';
+import './app.less';
 
-require('./app.less');
-
-var React = require('react');
-var Reactly = require('reactly');
-var Router = require('react-router');
-
-var Stores = require('./stores');
-var Actions = require('./actions');
-
-var NavBar = require('./components/nav-bar');
+import React from 'react';
+import Reactly from 'reactly';
+import Router from 'react-router';
+import Stores from './stores';
+import Actions from './actions';
+import NavBar from './components/nav-bar';
 
 class App extends Reactly.Module {
 
@@ -42,4 +38,4 @@ class App extends Reactly.Module {
 App.stores = [Stores.App];
 App.actions = [Actions.App];
 
-module.exports = App;
+export default App;

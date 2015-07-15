@@ -1,6 +1,6 @@
 {
   "name": "reactly",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A class based flux library for react",
   "main": "reactly.js",
   "repository": {
@@ -14,7 +14,7 @@
     "LICENSE.md"
   ],
   "dependencies": {
-    "eventemitter3": "^1.1.0",
+    "eventemitter3": "^1.1.1",
     "flux": "^2.0.3",
     "object-assign": "^3.0.0"
   },
@@ -22,12 +22,7 @@
     "react": "^0.13.3"
   },
   "author": "Dan Gwozdz <dev.dangw@gmail.com>",
-  "licenses": [
-    {
-      "type": "ISC",
-      "url": "https://github.com/dangw/reactly/LICENSE.md"
-    }
-  ],
+  "license": "ISC",
   "keywords": [
     "reactly",
     "flux",

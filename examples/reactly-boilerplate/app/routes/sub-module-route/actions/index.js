@@ -3,11 +3,11 @@
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
 
-'use strict';
+import SubModuleActions from './sub-module-actions';
 
 class Actions {
 }
 
-Actions.SubModule = require('./sub-module-actions');
+Actions.SubModule = SubModuleActions;
 
-module.exports = Actions;
+export default Actions;

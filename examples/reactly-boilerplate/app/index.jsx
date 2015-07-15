@@ -3,15 +3,12 @@
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
 
-'use strict';
+import './index.html';
 
-require('./index.html');
-
-var React = require('react');
-var Router = require('react-router');
-
-var App = require('./app');
-var Routes = require('./routes');
+import React from 'react';
+import Router from 'react-router';
+import App from './app';
+import Routes from './routes';
 
 var routes = (
     <Router.Route handler={App}>

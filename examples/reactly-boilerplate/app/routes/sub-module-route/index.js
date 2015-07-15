@@ -3,6 +3,6 @@
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
 
-'use strict';
+import SubModuleRoute from './sub-module-route';
 
-module.exports = require('./sub-module-route');
+export default SubModuleRoute;

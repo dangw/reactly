@@ -3,11 +3,11 @@
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
 
-'use strict';
+import AppActions from './app-actions';
 
 class Actions {
 }
 
-Actions.App = require('./app-actions');
+Actions.App = AppActions;
 
-module.exports = Actions;
+export default Actions;
