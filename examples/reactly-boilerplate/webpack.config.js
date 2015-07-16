@@ -36,7 +36,7 @@ module.exports = {
                 loader: 'babel'
             },
             {
-                test: /node_modules\\reactly\\.*\.js$/,
+                test: /node_modules(\/|\\)reactly(\/|\\).*\.js$/,
                 loader: 'babel'
             },
             {
