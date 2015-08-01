@@ -1,6 +1,6 @@
 {
   "name": "reactly",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A class based flux library for react",
   "main": "reactly.js",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "reactly-boilerplate",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A boilerplate app using reactly",
   "main": "app/index.jsx",
   "repository": {
@@ -20,7 +20,7 @@
   "dependencies": {
     "react": "^0.13.3",
     "react-router": "^0.13.3",
-    "reactly": "0.0.4"
+    "reactly": "0.0.5"
   },
   "devDependencies": {
     "babel-core": "^5.7.2",
