@@ -2,6 +2,7 @@
  * Copyright 2015, Dan Gwozdz <dev.dangw@gmail.com>
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
+'use strict';
 
 import './app.less';
 
@@ -12,7 +13,19 @@ import Stores from './stores';
 import Actions from './actions';
 import NavBar from './components/nav-bar';
 
-class App extends Reactly.Module {
+export default class App extends Reactly.Module {
+
+    static get childContextTypes() {
+        return Reactly.Module.childContextTypes;
+    }
+
+    static get stores() {
+        return [Stores.App];
+    }
+
+    static get actions() {
+        return [Actions.App];
+    }
 
     render() {
         return (
@@ -34,8 +47,3 @@ class App extends Reactly.Module {
     }
 
 }
-
-App.stores = [Stores.App];
-App.actions = [Actions.App];
-
-export default App;

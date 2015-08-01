@@ -2,17 +2,24 @@
  * Copyright 2015, Dan Gwozdz <dev.dangw@gmail.com>
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
+'use strict';
 
 import Reactly from 'reactly';
 import Constants from '../constants/index';
 import AppStores from '../../../stores/index';
 
-class SubModuleStore extends Reactly.Store {
+export default class SubModuleStore extends Reactly.Store {
+
+    static get actionListeners() {
+        return {
+            onRandomize: [Constants.Actions.RANDOMIZE]
+        };
+    }
 
     initialize() {
         this.state = {
             value: 0
-        }
+        };
     }
 
     getValue() {
@@ -24,10 +31,8 @@ class SubModuleStore extends Reactly.Store {
         this.emitChange();
     }
 
+    static get name() {
+        return "SubModuleStore";
+    }
+
 }
-
-SubModuleStore.actionListeners = {
-    onRandomize: [Constants.Actions.RANDOMIZE]
-};
-
-export default SubModuleStore;

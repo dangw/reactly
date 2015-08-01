@@ -2,13 +2,14 @@
  * Copyright 2015, Dan Gwozdz <dev.dangw@gmail.com>
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
+'use strict';
 
 import './nav-bar.less';
 
 import React from 'react/addons';
 import Router from 'react-router';
 
-class NavBar extends React.Component {
+export default class NavBar extends React.Component {
 
     render() {
         return (
@@ -34,5 +35,3 @@ class NavBar extends React.Component {
     }
 
 }
-
-export default NavBar;

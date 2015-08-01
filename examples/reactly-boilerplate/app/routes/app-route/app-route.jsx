@@ -2,6 +2,7 @@
  * Copyright 2015, Dan Gwozdz <dev.dangw@gmail.com>
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
+'use strict';
 
 import './app-route.less';
 
@@ -10,7 +11,17 @@ import Reactly from 'reactly';
 import Stores from '../../stores/index';
 import Actions from '../../actions/index';
 
-class HomeRoute extends Reactly.Component {
+export default class HomeRoute extends Reactly.Component {
+
+    static get contextTypes() {
+        return Reactly.Component.contextTypes;
+    }
+
+    static get storeListeners() {
+        return {
+            onAppStoreChange: [Stores.App]
+        }
+    }
 
     onAppStoreChange() {
         this.setState({
@@ -41,9 +52,3 @@ class HomeRoute extends Reactly.Component {
     }
 
 }
-
-HomeRoute.storeListeners = {
-    onAppStoreChange: [Stores.App]
-};
-
-export default HomeRoute;

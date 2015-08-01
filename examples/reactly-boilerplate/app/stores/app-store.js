@@ -2,16 +2,27 @@
  * Copyright 2015, Dan Gwozdz <dev.dangw@gmail.com>
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
+'use strict';
 
 import Reactly from 'reactly';
 import Constants from '../constants';
 
-class AppStore extends Reactly.Store {
+export default class AppStore extends Reactly.Store {
+
+    static get name() {
+        return "AppStore";
+    }
+
+    static get actionListeners() {
+        return {
+            onIncrementCount: [Constants.Actions.INCREMENT_COUNT]
+        }
+    }
 
     initialize() {
         this.state = {
             count: 0
-        }
+        };
     }
 
     getCount() {
@@ -24,9 +35,3 @@ class AppStore extends Reactly.Store {
     }
 
 }
-
-AppStore.actionListeners = {
-    onIncrementCount: [Constants.Actions.INCREMENT_COUNT]
-};
-
-export default AppStore;

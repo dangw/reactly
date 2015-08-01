@@ -2,6 +2,7 @@
  * Copyright 2015, Dan Gwozdz <dev.dangw@gmail.com>
  * Copyrights licensed under the ISC License. See the accompanying LICENSE.md file for terms.
  */
+'use strict';
 
 import './sub-module-route.less';
 
@@ -12,7 +13,29 @@ import Actions from './actions';
 import AppStores from '../../stores';
 import AppActions from '../../actions';
 
-class SubModuleRoute extends Reactly.Module {
+export default class SubModuleRoute extends Reactly.Module {
+
+    static get contextTypes() {
+        return Reactly.Module.contextTypes;
+    }
+
+    static get childContextTypes() {
+        return Reactly.Module.childContextTypes;
+    }
+
+    static get stores() {
+        return [Stores.SubModule];
+    }
+
+    static get actions() {
+        return [Actions.SubModule];
+    }
+
+    static get storeListeners() {
+        return {
+            onStoreChange: [AppStores.App, Stores.SubModule]
+        };
+    }
 
     onStoreChange() {
         this.setState({
@@ -60,12 +83,3 @@ class SubModuleRoute extends Reactly.Module {
     }
 
 }
-
-SubModuleRoute.stores = [Stores.SubModule];
-SubModuleRoute.actions = [Actions.SubModule];
-
-SubModuleRoute.storeListeners = {
-    onStoreChange: [AppStores.App, Stores.SubModule]
-};
-
-export default SubModuleRoute;
