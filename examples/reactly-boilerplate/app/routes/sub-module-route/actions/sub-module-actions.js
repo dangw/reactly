@@ -9,12 +9,12 @@ import Constants from '../constants';
 
 export default class SubModuleActions extends Reactly.Actions {
 
-    randomize() {
-        this.dispatchAction(Constants.Actions.RANDOMIZE);
+    static get id() {
+        return "SubModuleActions";
     }
 
-    static get name() {
-        return "SubModuleActions";
+    randomize() {
+        this.dispatchAction(Constants.Actions.RANDOMIZE);
     }
 
 }

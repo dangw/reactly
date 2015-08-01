@@ -9,7 +9,7 @@ import Constants from '../constants';
 
 export default class AppStore extends Reactly.Store {
 
-    static get name() {
+    static get id() {
         return "AppStore";
     }
 

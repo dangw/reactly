@@ -9,7 +9,7 @@ import Constants from '../constants';
 
 export default class AppActions extends Reactly.Actions {
 
-    static get name() {
+    static get id() {
         return "AppActions";
     }
 

@@ -10,6 +10,10 @@ import AppStores from '../../../stores/index';
 
 export default class SubModuleStore extends Reactly.Store {
 
+    static get id() {
+        return "SubModuleStore";
+    }
+
     static get actionListeners() {
         return {
             onRandomize: [Constants.Actions.RANDOMIZE]
@@ -29,10 +33,6 @@ export default class SubModuleStore extends Reactly.Store {
     onRandomize(action) {
         this.state.value = Math.random() * this.getStore(AppStores.App).getCount();
         this.emitChange();
-    }
-
-    static get name() {
-        return "SubModuleStore";
     }
 
 }

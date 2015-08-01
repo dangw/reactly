@@ -3,7 +3,7 @@ A class based flux library for react.
 
 ## Updates
 ### 0.0.5
-Fixed compatibility issues with internet explorer. Please note that these fixes require changes to the usage patterns. Any component interacting with actions or stores must provide contextTypes and/or childContextTypes properties. The bases classes provide the default implementation of these properties for the subclasses to call. The examples below have been updated.
+Fixed compatibility issues with internet explorer. Please note that these fixes require changes to the usage patterns. Stores and actions need to provide an id property. Any component interacting with actions or stores must provide contextTypes and/or childContextTypes properties. The bases classes provide the default implementation of these properties for the subclasses to call. The examples below have been updated.
 
 These issues stemmed from react not resolving static properties from base classes in internet explorer. With these changes internet explorer version 9 and above will work correctly.
 
@@ -25,6 +25,10 @@ Reactly modules can append stores and views to the stores and views provided by 
 Reactly.Store is the base class for implementing flux stores with reactly. A single instance of each store is made available to any components that are descendants of a module that provides the stores.
 ```javascript
 class MyAppStore extends Reactly.Store {
+
+    static get id() {
+        return "MyAppStore";
+    }
 
     static get actionListeners() {
         return {
@@ -54,6 +58,10 @@ class MyAppStore extends Reactly.Store {
 Reactly.Actions is the base class for implementing flux actions with reactly. A single instance of each actions object is made available to any components that are descendants of a module that provides the actions.
 ```javascript
 class MyAppActions extends Reactly.Actions {
+
+    static get id() {
+        return "MyAppActions";
+    }
 
     updateName(name) {
         this.dispatchAction(Constants.ACTION_UPDATE_NAME, {name: name});
