@@ -3,9 +3,9 @@ A class based flux library for react.
 
 ## Updates
 ### 0.0.5
-Fixed compatibility issues with internet explorer. Please note that these fixes require changes to the usage patterns. Stores and actions need to provide an id property. Any component interacting with actions or stores must provide contextTypes and/or childContextTypes properties. The bases classes provide the default implementation of these properties for the subclasses to call. The examples below have been updated.
+Fixed browser compatibility issues. Please note that these fixes require changes to the usage patterns. Stores and actions need to provide an id property. Any component interacting with actions or stores must provide contextTypes and/or childContextTypes properties. The bases classes provide the default implementation of these properties for the subclasses to call. The examples below have been updated.
 
-These issues stemmed from react not resolving static properties from base classes in internet explorer. With these changes internet explorer version 9 and above will work correctly.
+This pattern stems from react not resolving static properties from base classes in internet explorer. With these changes internet explorer version 9 and above will work correctly.
 
 ## Setup
 `npm install reactly`
