@@ -10,7 +10,7 @@ export default class Utils {
         if (listeners) {
             Object.keys(listeners).forEach(listener => {
                 listeners[listener].forEach(Store => {
-                    stores[Store.id].addChangeListener(context[listener], context);
+                    stores[Store.name].addChangeListener(context[listener], context);
                 });
                 context[listener]();
             });
@@ -21,7 +21,7 @@ export default class Utils {
         if (listeners) {
             Object.keys(listeners).forEach(listener => {
                 listeners[listener].forEach(Store => {
-                    stores[Store.id].removeChangeListener(context[listener], context);
+                    stores[Store.name].removeChangeListener(context[listener], context);
                 });
             });
         }

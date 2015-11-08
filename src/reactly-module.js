@@ -28,11 +28,11 @@ export default class ReactlyModule extends React.Component {
     }
 
     getStore(Store) {
-        return this._stores[Store.id];
+        return this._stores[Store.name];
     }
 
     getActions(Actions) {
-        return this._actions[Actions.id];
+        return this._actions[Actions.name];
     }
 
     getChildContext() {
@@ -48,12 +48,12 @@ export default class ReactlyModule extends React.Component {
 
         this._stores = objectAssign({}, this.context.stores);
         this.constructor.stores.forEach(Store => {
-            this._stores[Store.id] = new Store(this._dispatcher, this);
+            this._stores[Store.name] = new Store(this._dispatcher, this);
         });
 
         this._actions = objectAssign({}, this.context.actions);
         this.constructor.actions.forEach(Actions => {
-            this._actions[Actions.id] = new Actions(this._dispatcher);
+            this._actions[Actions.name] = new Actions(this._dispatcher);
         });
 
         Utils.addChangeListeners(this, this._stores, this.constructor.storeListeners);
@@ -63,7 +63,7 @@ export default class ReactlyModule extends React.Component {
         Utils.removeChangeListeners(this, this._stores, this.constructor.storeListeners);
 
         this.constructor.stores.forEach(Store => {
-            this._stores[Store.id].unregister();
+            this._stores[Store.name].unregister();
         });
 
         this._dispatcher = null;

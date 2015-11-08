@@ -38,15 +38,15 @@ export default class ReactlyStore extends EventEmitter {
     }
 
     addChangeListener(callback, context) {
-        this.on(this.id, callback, context);
+        this.on(this.constructor.name, callback, context);
     }
 
     removeChangeListener(callback, context) {
-        this.removeListener(this.id, callback, context);
+        this.removeListener(this.constructor.name, callback, context);
     }
 
     emitChange() {
-        this.emit(this.id);
+        this.emit(this.constructor.name);
     }
 
     handleAction(action) {

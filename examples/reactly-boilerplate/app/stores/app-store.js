@@ -9,10 +9,6 @@ import Constants from '../constants';
 
 export default class AppStore extends Reactly.Store {
 
-    static get id() {
-        return "AppStore";
-    }
-
     static get actionListeners() {
         return {
             onIncrementCount: [Constants.Actions.INCREMENT_COUNT]

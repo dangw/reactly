@@ -10,10 +10,6 @@ import AppStores from '../../../stores/index';
 
 export default class SubModuleStore extends Reactly.Store {
 
-    static get id() {
-        return "SubModuleStore";
-    }
-
     static get actionListeners() {
         return {
             onRandomize: [Constants.Actions.RANDOMIZE]
