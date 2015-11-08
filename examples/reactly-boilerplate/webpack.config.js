@@ -7,6 +7,11 @@ module.exports = {
         app: [
             './app/index.jsx'
         ],
+        debug: [
+            'webpack-dev-server/client?http://localhost:3000',
+            'webpack/hot/only-dev-server',
+            'react-hot-loader'
+        ],
         vendor: [
             'react',
             'react/addons',
@@ -15,12 +20,12 @@ module.exports = {
         ]
     },
     output: {
-        path: './dist',
-        filename: '[name].js',
-        devtoolModuleFilenameTemplate: "file://[absolute-resource-path]",
-        devtoolFallbackModuleFilenameTemplate: "file://[absolute-resource-path]?[hash]"
+        path: path.join(__dirname, 'dist'),
+        publicPath: '/dist/',
+        filename: '[name].js'
     },
     module: {
+        devtool: 'source-map',
         loaders: [
             {
                 test: /\.html/,
@@ -28,16 +33,8 @@ module.exports = {
             },
             {
                 test: /(\.jsx$|\.js$)/,
-                loader: 'jsx'
-            },
-            {
-                test: /(\.jsx$|\.js$)/,
                 exclude: /node_modules/,
-                loader: 'babel'
-            },
-            {
-                test: /node_modules(\/|\\)reactly(\/|\\).*\.js$/,
-                loader: 'babel'
+                loaders: ['react-hot', 'babel']
             },
             {
                 test: /\.css$/,
@@ -53,7 +50,8 @@ module.exports = {
         extensions: ['', '.js', '.jsx']
     },
     plugins: [
-        new ExtractTextPlugin("[name].css"),
-        new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js")
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js"),
+        new ExtractTextPlugin("[name].css")
     ]
 };
