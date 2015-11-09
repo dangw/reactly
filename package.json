@@ -2,24 +2,27 @@
   "name": "reactly",
   "version": "0.0.5",
   "description": "A class based flux library for react",
-  "main": "reactly.js",
+  "main": "lib/reactly.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/dangw/reactly"
   },
   "files": [
     "reactly.js",
+    "src/",
     "lib/",
     "README.md",
     "LICENSE.md"
   ],
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "babel src --out-dir lib --source-maps",
+    "prepublish": "npm run clean && npm run build"
+  },
   "dependencies": {
     "eventemitter3": "^1.1.1",
     "flux": "^2.0.3",
     "object-assign": "^3.0.0"
-  },
-  "peerDependencies": {
-    "react": "^0.13.3"
   },
   "author": "Dan Gwozdz <dev.dangw@gmail.com>",
   "license": "ISC",
@@ -28,5 +31,9 @@
     "flux",
     "react",
     "dangw"
-  ]
+  ],
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "rimraf": "^2.4.3"
+  }
 }

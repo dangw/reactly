@@ -17,11 +17,11 @@ export default class ReactlyComponent extends React.Component {
     }
 
     getStore(Store) {
-        return this.context.stores[Store.id];
+        return this.context.stores[Utils.getName(Store)];
     }
 
     getActions(Actions) {
-        return this.context.actions[Actions.id];
+        return this.context.actions[Utils.getName(Actions)];
     }
 
     componentWillMount() {
