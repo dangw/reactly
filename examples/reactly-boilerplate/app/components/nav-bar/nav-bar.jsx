@@ -6,7 +6,7 @@
 
 import './nav-bar.less';
 
-import React from 'react/addons';
+import React from 'react';
 import Router from 'react-router';
 
 export default class NavBar extends React.Component {
@@ -16,7 +16,7 @@ export default class NavBar extends React.Component {
             <div className="nav-bar">
                 <div className="nav-bar-items">{
                     React.Children.map(this.props.children, (item, index) => {
-                        return React.addons.cloneWithProps(item, {
+                        return React.cloneElement(item, {
                             className: "nav-bar-item",
                             key: index
                         })
@@ -24,7 +24,7 @@ export default class NavBar extends React.Component {
                 }</div>
                 <div className="nav-bar-overflow-items">{
                     this.props.overflow.map((item, index) => {
-                        return React.addons.cloneWithProps(item, {
+                        return React.cloneElement(item, {
                             className: "nav-bar-overflow-item",
                             key: index
                         })

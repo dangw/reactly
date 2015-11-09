@@ -8,7 +8,7 @@ import './app.less';
 
 import React from 'react';
 import Reactly from 'reactly';
-import Router from 'react-router';
+import {Link} from 'react-router';
 import Stores from './stores';
 import Actions from './actions';
 import NavBar from './components/nav-bar';
@@ -35,12 +35,12 @@ export default class App extends Reactly.Module {
                         <a href="https://github.com/dangw/reactly">GitHub</a>,
                         <a href="https://www.npmjs.com/package/reactly">npm</a>
                     ]}>
-                        <Router.Link to="/">App</Router.Link>
-                        <Router.Link to="/sub-module">Sub Module</Router.Link>
+                        <Link to="/">App</Link>
+                        <Link to="/sub-module">Sub Module</Link>
                     </NavBar>
                 </div>
                 <div id="app-content">
-                    <Router.RouteHandler/>
+                    {this.props.children}
                 </div>
             </div>
         );

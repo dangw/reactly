@@ -14,7 +14,7 @@ module.exports = {
         ],
         vendor: [
             'react',
-            'react/addons',
+            'react-dom',
             'react-router',
             'reactly'
         ]

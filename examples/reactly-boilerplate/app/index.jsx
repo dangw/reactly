@@ -7,17 +7,17 @@
 import './index.html';
 
 import React from 'react';
-import Router from 'react-router';
+import ReactDOM from 'react-dom';
+import { Router, Route } from 'react-router';
 import App from './app';
 import Routes from './routes';
 
-var routes = (
-    <Router.Route handler={App}>
-        <Router.Route path="/" handler={Routes.App}/>
-        <Router.Route path="/sub-module" handler={Routes.SubModule}/>
-    </Router.Route>
-);
+ReactDOM.render((
+    <Router>
+        <Route component={App}>
+            <Route path="/" component={Routes.App}/>
+            <Route path="/sub-module" component={Routes.SubModule}/>
+        </Route>
+    </Router>
+), document.getElementById("app"));
 
-Router.run(routes, Router.HashLocation, function (Handler) {
-    React.render(<Handler/>, document.body);
-});
