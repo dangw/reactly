@@ -10,7 +10,7 @@ export default class Utils {
         if (listeners) {
             Object.keys(listeners).forEach(listener => {
                 listeners[listener].forEach(Store => {
-                    stores[Store.name].addChangeListener(context[listener], context);
+                    stores[Utils.getName(Store)].addChangeListener(context[listener], context);
                 });
                 context[listener]();
             });
@@ -21,7 +21,7 @@ export default class Utils {
         if (listeners) {
             Object.keys(listeners).forEach(listener => {
                 listeners[listener].forEach(Store => {
-                    stores[Store.name].removeChangeListener(context[listener], context);
+                    stores[Utils.getName(Store)].removeChangeListener(context[listener], context);
                 });
             });
         }
@@ -37,6 +37,13 @@ export default class Utils {
             });
         }
         return result;
+    }
+
+    static getName(func) {
+        if (func.name === undefined) {
+            func.name = ('' + func).match(/^\s*function ([^ (]*)/)[1];
+        }
+        return func.name;
     }
 
 }
