@@ -1,34 +1,37 @@
-# Reactly
-A class based flux library for react.
+# reactly
+A class based flux library for react
 
-## Updates
-### 0.0.5
-Fixed browser compatibility issues. Please note that these fixes require changes to the usage patterns. Stores and actions need to provide an id property. Any component interacting with actions or stores must provide contextTypes and/or childContextTypes properties. The bases classes provide the default implementation of these properties for the subclasses to call. The examples below have been updated.
+## How to Set It Up
+`npm install --save reactly`
 
-This pattern stems from react not resolving static properties from base classes in internet explorer. With these changes internet explorer version 9 and above will work correctly.
+## Why You Might Want It
+Reactly provides simple base classes for applying the flux pattern in your react application. It is not a framework but rather utilities to make applying the flux pattern simpler. Reactly encourages nested store and action contexts, called modules, so that you don't have to keep your whole app's state in memory as you navigate between different routes. When a module is unmounted it releases its stores.
 
-## Setup
-`npm install reactly`
+## Things You Should Know
+* Designed to be used with es6 classes
+* Works with React 0.13 and React 0.14
+* Depends on the flux and eventemmiter3 packages
 
-## Notes
-Reactly requires es6 transpiling as it is founded on es6 classes. See reactly-boilerplate below for an example of using webpack with babel transpiling.
+## What's New in the Latest Version
+* 0.1.0
+  * removed the need for the `id` property of stores and actions
+  * the es6 sources have been moved to the `src` folder
+  * the `lib` folder is now transpiled from es6 to es5
+* 0.0.5
+  * fixed browser compatibility issues
 
-## Examples
+## Give Me an Example
 [reactly-boilerplate](https://github.com/dangw/reactly/tree/master/examples/reactly-boilerplate)
 
-## Usage
+## How To Use It
 Reactly provides base classes to implement actions, stores, modules, and components. Reactly modules are react components that provide stores and actions to all child components. Reactly components are react components that can subscribe to stores and call actions defined by parent reactly modules.
 
-Reactly modules can append stores and views to the stores and views provided by ancestor modules. The root module will instantiate a flux dispatcher which is used by all modules.
+Reactly modules can append stores and actions to the stores and actions provided by ancestor modules. The root module will instantiate a flux dispatcher which is used by all modules.
 
 ### Creating Stores
 Reactly.Store is the base class for implementing flux stores with reactly. A single instance of each store is made available to any components that are descendants of a module that provides the stores.
 ```javascript
 class MyAppStore extends Reactly.Store {
-
-    static get id() {
-        return "MyAppStore";
-    }
 
     static get actionListeners() {
         return {
@@ -58,10 +61,6 @@ class MyAppStore extends Reactly.Store {
 Reactly.Actions is the base class for implementing flux actions with reactly. A single instance of each actions object is made available to any components that are descendants of a module that provides the actions.
 ```javascript
 class MyAppActions extends Reactly.Actions {
-
-    static get id() {
-        return "MyAppActions";
-    }
 
     updateName(name) {
         this.dispatchAction(Constants.ACTION_UPDATE_NAME, {name: name});
