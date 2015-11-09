@@ -8,7 +8,6 @@
     "url": "https://github.com/dangw/reactly"
   },
   "files": [
-    "reactly.js",
     "src/",
     "lib/",
     "README.md",
