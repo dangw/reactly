@@ -13,6 +13,8 @@ Reactly provides simple base classes for applying the flux pattern in your react
 * Depends on the flux and eventemmiter3 packages
 
 ## What's New in the Latest Version
+* 0.1.1
+  * stores now receive the module's child context in their initialize call  
 * 0.1.0
   * removed the need for the `id` property of stores and actions
   * the es6 sources have been moved to the `src` folder

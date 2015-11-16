@@ -1,6 +1,6 @@
 {
   "name": "reactly",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A class based flux library for react",
   "main": "lib/reactly.js",
   "repository": {
@@ -13,6 +13,9 @@
     "README.md",
     "LICENSE.md"
   ],
+  "peerDependencies": {
+    "react": ">=0.13.0"
+  },
   "scripts": {
     "clean": "rimraf lib",
     "build": "babel src --out-dir lib",

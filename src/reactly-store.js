@@ -9,7 +9,7 @@ import Utils from './utils';
 
 export default class ReactlyStore extends EventEmitter {
 
-    constructor(dispatcher, context) {
+    constructor(dispatcher, module) {
         super();
         this._actionMap = Utils.mapFromListeners(this.constructor.actionListeners);
         this._dispatcher = dispatcher;
@@ -17,20 +17,20 @@ export default class ReactlyStore extends EventEmitter {
             this.handleAction(action)
         });
         if (this.initialize) {
-            this.initialize();
+            this.initialize(module.getChildContext());
         }
 
-        this._context = context;
+        this._module = module;
     }
 
     unregister() {
         this._dispatcher.unregister(this._dispatchToken);
         this._dispatchToken = null;
-        this._context = null;
+        this._module = null;
     }
 
     getStore(Store) {
-        return this._context.getStore(Store);
+        return this._module.getStore(Store);
     }
 
     getToken() {
