@@ -14,7 +14,7 @@ const paths = {
   src: path.resolve(dir, './src'),
   dist: path.resolve(dir, './dist'),
   ver: path.resolve(dir, `./dist/v${ver}`),
-  modules: path.resolve(__dirname, "./node_modules")
+  modules: path.resolve(dir, "./node_modules")
 };
 
 if (fs.existsSync(path.resolve(dir, './static'))) {

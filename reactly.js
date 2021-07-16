@@ -2,9 +2,9 @@
 const path = require('path');
 const { execFileSync } = require("child_process");
 
-const webpack = path.resolve(__dirname, `./node_modules/.bin/webpack`);
-const server = path.resolve(__dirname, `./node_modules/.bin/http-server`);
-const tsc = path.resolve(__dirname, `./node_modules/.bin/tsc`);
+const webpack = path.resolve(process.env.PWD, `./node_modules/.bin/webpack`);
+const server = path.resolve(process.env.PWD, `./node_modules/.bin/http-server`);
+const tsc = path.resolve(process.env.PWD, `./node_modules/.bin/tsc`);
 const config = path.resolve(__dirname, `./webpack.config.js`);
 
 function build() {
