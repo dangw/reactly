@@ -12,6 +12,7 @@
     "dangw"
   ],
   "files": [
+    ".npmrc",
     "LICENSE.md",
     "README.md",
     "index.ejs",
