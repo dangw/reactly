@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "target": "ES2015",
+    "module": "es6",
+    "strict": true,
+    "typeRoots": ["node_modules/@types"],
+    "paths": {
+      "react": ["node_modules/@types/react"],
+      "react-dom": ["node_modules/@types/react-dom"],
+      "react-router-dom": ["node_modules/@types/react-router-dom"]
+    }
+  },
+  "exclude": [
+    "*.css"
+  ]
+}
