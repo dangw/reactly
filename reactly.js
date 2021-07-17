@@ -9,10 +9,8 @@ const config = path.resolve(__dirname, `./webpack.config.js`);
 
 function build() {
   try {
-    execFileSync("npx", [
-      webpack,
-      "-c", config,
-      "--env", "production"
+    execFileSync("npm", [
+      "exec", "-c", `${webpack} -c ${config} --env production`
     ], {
       cwd: process.env.PWD,
       stdio: 'inherit'
@@ -22,9 +20,8 @@ function build() {
 
 function start() {
   try {
-    execFileSync("npx", [
-      webpack, "serve",
-      "-c", config
+    execFileSync("npm", [
+      "exec", "-c", `${webpack} serve -c ${config}`
     ], {
       cwd: process.env.PWD,
       stdio: 'inherit'
@@ -37,10 +34,7 @@ function serve() {
 
   try {
     execFileSync(server, [
-      "-p", "8081",
-      "-c-1",
-      "--proxy", `http://localhost:8081/index.${ver}.html?`,
-      "-d", "false"
+      "-p", "8081", "-c-1", "--proxy", `http://localhost:8081/index.${ver}.html?`, "-d", "false"
     ], {
       cwd: path.resolve(process.env.PWD, `./dist/`),
       stdio: 'inherit'
@@ -50,7 +44,9 @@ function serve() {
 
 function check() {
   try {
-    execFileSync("npx", [tsc], {
+    execFileSync("npm", [
+      "exec", "-c", tsc
+    ], {
       cwd: process.env.PWD,
       stdio: 'inherit'
     });

@@ -7,10 +7,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ver = process.env.npm_package_version;
 const dir = process.env.PWD;
 const name = process.env.npm_package_name;
+const main = process.env.npm_package_config_main;
 const title = process.env.npm_package_config_title;
 
 const paths = {
-  main: path.resolve(dir, process.env.npm_package_main),
+  main: path.resolve(dir, main),
   src: path.resolve(dir, './src'),
   dist: path.resolve(dir, './dist'),
   ver: path.resolve(dir, `./dist/v${ver}`),
